@@ -28,7 +28,6 @@ function displayCity(event) {
   let city = inputCity.value;
 
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
 
   axios.get(apiUrl).then(displayWeatherData);
 }
@@ -54,6 +53,7 @@ let date = new Date();
 function showTime() {
   let day = days[date.getDay()];
   let hours = date.getHours();
+  hours = hours.toString().padStart(2, "0");
   let minutes = date.getMinutes();
   minutes = minutes.toString().padStart(2, "0");
 
